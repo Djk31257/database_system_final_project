@@ -45,6 +45,8 @@
                     &nbsp;&nbsp;&nbsp;
                     <asp:LinkButton ID="addingLinkButton" runat="server" CssClass="auto-style5" ForeColor="White" PostBackUrl="~/adding.aspx">新增紀錄</asp:LinkButton>
                     &nbsp;&nbsp;&nbsp;
+                    <asp:LinkButton ID="addingFoodLinkButton" runat="server" CssClass="auto-style5" ForeColor="White" PostBackUrl="~/addingFood.aspx">新增一餐內的食物</asp:LinkButton>
+                    &nbsp;&nbsp;&nbsp;
                     <asp:LinkButton ID="directionLinkButton" runat="server" CssClass="auto-style5" ForeColor="White">說明</asp:LinkButton>
                 </td>
             </tr>
@@ -56,15 +58,7 @@
                     <td class="auto-style6">
                         <asp:Label ID="addingMealLabel" runat="server" CssClass="auto-style7" Text="新增一餐" ForeColor="Black"></asp:Label>
                         <asp:Label ID="Label1" runat="server" Text="日期"></asp:Label>
-                        <asp:Calendar ID="dateCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" HorizontalAlign="Center" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
-                            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-                            <NextPrevStyle VerticalAlign="Bottom" />
-                            <OtherMonthDayStyle ForeColor="#808080" />
-                            <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-                            <SelectorStyle BackColor="#CCCCCC" />
-                            <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-                            <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-                            <WeekendDayStyle BackColor="#FFFFCC" />
+                        <asp:Calendar ID="dateCalendar" runat="server" HorizontalAlign="Center">
                         </asp:Calendar>
                         <input id="timeInput" type="time" asp-for="eatingTime" name="timeInput" runat="server" /><asp:Button ID="insertButton" runat="server" OnClick="insertButton_Click" Text="按此新增一餐" />
                         <asp:SqlDataSource ID="mealTableSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" InsertCommand="INSERT INTO mealTable(account, date, time) VALUES (@account, @date, @time)" SelectCommand="SELECT [meal_id] FROM [mealTable] WHERE (([date] = @date) AND ([account] = @account) AND ([time] = @time))">
@@ -84,7 +78,7 @@
                                 <asp:BoundField DataField="meal_id" HeaderText="meal_id" InsertVisible="False" ReadOnly="True" SortExpression="meal_id" />
                             </Fields>
                         </asp:DetailsView>
-                        <asp:SqlDataSource ID="mealFoodTableSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" InsertCommand="INSERT INTO mealFoodTable(meal_id, food_name, calories) VALUES (@meal_id, N'default', 0)" SelectCommand="SELECT * FROM [mealFoodTable]">
+                        <asp:SqlDataSource ID="mealFoodTableSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" InsertCommand="INSERT INTO mealFoodTable(meal_id, food_name, calories, weight, food_id) VALUES (@meal_id, N'default', 0, 0, 0)" SelectCommand="SELECT * FROM [mealFoodTable]">
                             <InsertParameters>
                                 <asp:ControlParameter ControlID="mealIDDetailsView" Name="meal_id" PropertyName="SelectedValue" />
                             </InsertParameters>

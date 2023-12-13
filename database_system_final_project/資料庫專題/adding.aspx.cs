@@ -54,16 +54,23 @@ namespace 資料庫專題
 
         protected void insertButton_Click(object sender, EventArgs e)
         {
-            //取出input time的值
+            // 取出input time的值
             timeLabel.Text = timeInput.Value;
-            //檢查帳號 時間有沒有輸入
+            // 檢查帳號 時間有沒有輸入
             if (Session["account"] != null && timeLabel.Text != null)
             {
-                //新增一餐到mealTable
-                mealTableSqlDataSource.Insert();
-                //在mealFoodTable新增一餐空的default 為了能顯示這一餐
-                mealIDDetailsView.DataBind();
-                mealFoodTableSqlDataSource.Insert();
+                if (!dateCalendar.SelectedDate.Equals(DateTime.MinValue))// 使用者有選取日期
+                {
+                    // 新增一餐到mealTable
+                    mealTableSqlDataSource.Insert();
+                    // 在mealFoodTable新增一餐空的default 為了能顯示這一餐
+                    mealIDDetailsView.DataBind();
+                    mealFoodTableSqlDataSource.Insert();
+                }
+                else// 跳視窗提醒尚未選擇日期
+                {
+                    Response.Write("<script>alert('您尚未選擇日期！');</script>");
+                }
             }
         }
     }

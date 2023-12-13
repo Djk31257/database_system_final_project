@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adding.aspx" />
+    <Content Include="addingFood.aspx" />
     <Content Include="App_Data\clientData.mdf" />
     <Content Include="App_Data\clientData_log.ldf">
       <DependentUpon>clientData.mdf</DependentUpon>
@@ -85,6 +86,13 @@
     </Compile>
     <Compile Include="adding.aspx.designer.cs">
       <DependentUpon>adding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addingFood.aspx.cs">
+      <DependentUpon>addingFood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addingFood.aspx.designer.cs">
+      <DependentUpon>addingFood.aspx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>

@@ -20,7 +20,7 @@
         .auto-style7 {
             font-size: large;
         }
-        </style>
+    </style>
 </head>
 <body style="background-image: url('sky.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-position: center center">
     <form id="form1" runat="server">
@@ -34,6 +34,8 @@
                     <asp:LinkButton ID="recordLinkButton" runat="server" CssClass="auto-style5" PostBackUrl="~/meal.aspx" ForeColor="White">飲食紀錄</asp:LinkButton>
                     &nbsp;&nbsp;&nbsp;
                     <asp:LinkButton ID="addingLinkButton" runat="server" CssClass="auto-style5" ForeColor="White" PostBackUrl="~/adding.aspx">新增紀錄</asp:LinkButton>
+                    &nbsp;&nbsp;&nbsp;
+                    <asp:LinkButton ID="addingFoodLinkButton" runat="server" CssClass="auto-style5" ForeColor="White" PostBackUrl="~/addingFood.aspx">新增一餐內的食物</asp:LinkButton>
                     &nbsp;&nbsp;&nbsp;
                     <asp:LinkButton ID="directionLinkButton" runat="server" CssClass="auto-style5" ForeColor="White">說明</asp:LinkButton>
                 </td>
@@ -54,7 +56,7 @@
                 <asp:SessionParameter Name="account" SessionField="account" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-            <asp:GridView ID="mealGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="meal_id" DataSourceID="mealSqlDataSource" HorizontalAlign="Center" CssClass="auto-style7" OnSelectedIndexChanged="mealGridView_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" Height="161px" Width="450px" AllowPaging="True">
+            <asp:GridView ID="mealGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="meal_id" DataSourceID="mealSqlDataSource" HorizontalAlign="Center" CssClass="auto-style7" OnSelectedIndexChanged="mealGridView_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None" Height="161px" Width="450px" AllowPaging="True" AllowSorting="True">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
@@ -63,7 +65,7 @@
 
 <ItemStyle HorizontalAlign="Center"></ItemStyle>
                     </asp:BoundField>
-                    <asp:BoundField DataField="time" HeaderText="時間" SortExpression="time" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" >
+                    <asp:BoundField DataField="time" HeaderText="時間" SortExpression="date, time" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" >
 <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
 
 <ItemStyle HorizontalAlign="Center"></ItemStyle>
