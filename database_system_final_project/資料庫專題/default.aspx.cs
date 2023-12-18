@@ -15,9 +15,20 @@ namespace 資料庫專題
         {
             titleLB.Text = ("歡迎來到飲食紀錄平台");
             errorLabel.Visible = false;
-            Session["account"] = "";
-            loggedIn = false;
-            Session["loggedIn"] = loggedIn;
+            // 如果沒登入過
+            if (Application["loggedIn"] == null)
+            {
+                Session["account"] = "";
+                loggedIn = false;
+                Session["loggedIn"] = loggedIn;
+            }
+            // 如果登入過
+            else
+            {
+                loggedIn = true;
+                accountTextBox.Visible = false;
+                passwordTextBox.Visible = false;
+            }
         }
 
         protected void loginButton_Click(object sender, EventArgs e)
@@ -31,6 +42,7 @@ namespace 資料庫專題
                 Session["password"] = null;
                 loggedIn = false;
                 Session["loggedIn"] = false;
+                Response.Write("<script>alert('帳號或密碼錯誤');</script>");
             }
             //有找到這個帳號且正好為1個
             else if(userAccountDetailsView.DataItemCount == 1)
@@ -41,6 +53,7 @@ namespace 資料庫專題
                 Session["account"] = accountTextBox.Text;
                 Session["loggedIn"] = true;
                 Response.Redirect("~/meal.aspx");
+                Application["loggedIn"] = "abc";
             }
             //Session["loggedIn"] = loggedIn;
         }

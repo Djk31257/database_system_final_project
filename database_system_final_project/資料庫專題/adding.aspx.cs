@@ -66,6 +66,7 @@ namespace 資料庫專題
                     // 在mealFoodTable新增一餐空的default 為了能顯示這一餐
                     mealIDDetailsView.DataBind();
                     mealFoodTableSqlDataSource.Insert();
+                    Response.Write("<script>alert('新增完成！');</script>");
                 }
                 else// 跳視窗提醒尚未選擇日期
                 {

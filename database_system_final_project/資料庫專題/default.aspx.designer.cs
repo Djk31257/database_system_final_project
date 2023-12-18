@@ -60,6 +60,24 @@ namespace 資料庫專題
         protected global::System.Web.UI.WebControls.LinkButton addingLinkButton;
 
         /// <summary>
+        /// addingFoodLinkButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton addingFoodLinkButton;
+
+        /// <summary>
+        /// editPasswordLinkButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton editPasswordLinkButton;
+
+        /// <summary>
         /// directionLinkButton 控制項。
         /// </summary>
         /// <remarks>

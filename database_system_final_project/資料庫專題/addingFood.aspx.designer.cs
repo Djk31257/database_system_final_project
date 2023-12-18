@@ -69,6 +69,15 @@ namespace 資料庫專題
         protected global::System.Web.UI.WebControls.LinkButton addingFoodLinkButton;
 
         /// <summary>
+        /// editPasswordLinkButton 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton editPasswordLinkButton;
+
+        /// <summary>
         /// directionLinkButton 控制項。
         /// </summary>
         /// <remarks>
@@ -76,15 +85,6 @@ namespace 資料庫專題
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton directionLinkButton;
-
-        /// <summary>
-        /// mealSqlDataSource 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource mealSqlDataSource;
 
         /// <summary>
         /// dateLabel 控制項。
@@ -114,6 +114,15 @@ namespace 資料庫專題
         protected global::System.Web.UI.WebControls.Label mealLabel;
 
         /// <summary>
+        /// mealSqlDataSource 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource mealSqlDataSource;
+
+        /// <summary>
         /// mealGridView 控制項。
         /// </summary>
         /// <remarks>
@@ -123,15 +132,6 @@ namespace 資料庫專題
         protected global::System.Web.UI.WebControls.GridView mealGridView;
 
         /// <summary>
-        /// mealFoodSqlDataSource 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource mealFoodSqlDataSource;
-
-        /// <summary>
         /// mealFoodLabel 控制項。
         /// </summary>
         /// <remarks>
@@ -139,6 +139,15 @@ namespace 資料庫專題
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label mealFoodLabel;
+
+        /// <summary>
+        /// mealFoodSqlDataSource 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource mealFoodSqlDataSource;
 
         /// <summary>
         /// mealFoodGridView 控制項。

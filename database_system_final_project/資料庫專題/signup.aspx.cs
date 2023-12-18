@@ -33,6 +33,7 @@ namespace 資料庫專題
             {
                 errorLabel.Text = "密碼不一致";
                 errorLabel.Visible = true;
+                Response.Write("<script>alert('密碼不一致！');</script>");
             }
             else//密碼確認一樣
             {
@@ -46,6 +47,7 @@ namespace 資料庫專題
                     signupSqlDataSource.Insert();
                     errorLabel.Text = "註冊成功！請返回登入";
                     errorLabel.Visible = true;
+                    Response.Write("<script>alert('註冊成功！');location.href='default.aspx';</script>");
                 }
                 else
                 //if(userAccountDetailsView.DataItemCount == 1)
@@ -56,6 +58,7 @@ namespace 資料庫專題
                     Session["account"] = null;
                     Session["password"] = null;
                     Session["email"] = null;
+                    Response.Write("<script>alert('此帳號已註冊過！');</script>");
                 }
             }
         }
