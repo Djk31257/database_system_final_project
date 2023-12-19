@@ -21,7 +21,7 @@
         }
     </style>
 </head>
-<body style="background-image: url('https://localhost:44362/sky.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-position: center center">
+<body style="background-image: url('sky.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-position: center center">
     <form id="form1" runat="server">
         <div>
             <table class="auto-style1">

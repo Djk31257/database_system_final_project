@@ -47,7 +47,7 @@ namespace 資料庫專題
                     signupSqlDataSource.Insert();
                     errorLabel.Text = "註冊成功！請返回登入";
                     errorLabel.Visible = true;
-                    Response.Write("<script>alert('註冊成功！');location.href='default.aspx';</script>");
+                    Response.Write("<script>alert('註冊成功！請返回登入');location.href='default.aspx';</script>");
                 }
                 else
                 //if(userAccountDetailsView.DataItemCount == 1)
